@@ -1,30 +1,48 @@
+/* Basic Styling */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding-top: 50px;
-    background-color: #f2f2f2;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6b6b, #f7a1b6, #f8e16c, #8c7f64);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
 }
 
-input[type="text"], input[type="password"] {
+/* Animation for background gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Form Styling */
+input[type="text"], input[type="password"], input[type="submit"] {
     padding: 10px;
     width: 250px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 input[type="submit"] {
-    padding: 10px 20px;
-    margin-top: 10px;
     background-color: #4CAF50;
     border: none;
     color: white;
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-    color: #4CAF50;
-}
-
+/* Flash Messages */
 .flash {
     margin: 10px auto;
     padding: 10px;
@@ -40,4 +58,13 @@ a {
 .flash.error {
     background-color: #f8d7da;
     color: #721c24;
+}
+
+a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+h2 {
+    color: white;
 }
